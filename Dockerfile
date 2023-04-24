@@ -4,7 +4,8 @@ FROM ruby:$RUBY_VERSION-alpine AS builder
 
 RUN apk --no-cache add \
   openssl-dev \
-  build-base \
+  alpine-sdk \
+  build-base
 
 COPY Gemfile* .
 
