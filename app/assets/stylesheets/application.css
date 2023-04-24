@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+@import "main_style.css";
+@import "truyen.css";
+@import "footer.css";
