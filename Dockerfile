@@ -1,26 +1,25 @@
 ARG RUBY_VERSION=3.0.4
 
-FROM ruby:RUBY_VERSION-alpine AS builder
+FROM ruby:$RUBY_VERSION-alpine AS builder
 
 RUN apk --no-cache add \
+  openssl-dev \
   build-base \
-  alpine-sdk \
-  mysql-dev \
-  mysql-client \
-  vim \
 
 COPY Gemfile* .
 
 RUN bundle install
 
-FROM ruby:RUBY_VERSION-alpine AS runner
+FROM ruby:$RUBY_VERSION-alpine AS runner
 
 RUN apk --no-cache add \
-    tzdata \
     nodejs \
     bash \
+    mysql-client \
+    mysql-dev \
+    tzdata \
     curl \
-    openssl
+    vim
 
 WORKDIR /app
 
@@ -28,6 +27,4 @@ COPY --from=builder /usr/local/bundle/ /usr/local/bundle/
 
 COPY . .
 
-EXPOSE 3000
-
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["bundle", "exec", "rails", "s", "-b", "0.0.0.0"]
