@@ -1,3 +1,3 @@
 class Client::ClientController < ApplicationController
-  layout "client/layouts/appliction"
+  layout "client/layouts/application"
 end
