@@ -4,6 +4,7 @@ FROM ruby:$RUBY_VERSION-alpine AS builder
 
 RUN apk --no-cache add \
   openssl-dev \
+  alpine-sdk \
   mysql-client \
   mysql-dev \
   build-base
