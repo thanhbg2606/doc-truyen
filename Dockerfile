@@ -4,7 +4,9 @@ FROM ruby:$RUBY_VERSION-alpine AS builder
 
 RUN apk --no-cache add \
   openssl-dev \
-  build-base \
+  mysql-client \
+  mysql-dev \
+  build-base
 
 COPY Gemfile* .
 
@@ -15,10 +17,10 @@ FROM ruby:$RUBY_VERSION-alpine AS runner
 RUN apk --no-cache add \
     nodejs \
     bash \
-    mysql-client \
-    mysql-dev \
     tzdata \
     curl \
+    mysql-client \
+    mysql-dev \
     vim
 
 WORKDIR /app
