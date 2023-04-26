@@ -1,17 +1,17 @@
 <div class="container">
   <ul class="breadcrumb">
     <li class="breadcrumb-item">
-      <a href="../main.html">Trang chủ</a>
+      <%= link_to "Trang chủ", root_path %>
     </li>
     <li class="breadcrumb-item">
-      <a href="../truyen/truyenvd.html">Truyện a</a>
+      <%= link_to @chapter.story.name, @chapter.story %>
     </li>
-    <li class="breadcrumb-item active">Chapter</li>
+    <li class="breadcrumb-item active">Chương <%= @chapter.order %></li>
   </ul>
 </div>
 <!-- This is Content -->
 <div class="nav justify-content-center">
-  <h2>Chương 2</h2>
+  <h2><%= name_chapters @chapter %></h2>
 </div>
 <br>
 <br>
@@ -30,18 +30,9 @@
       <button type="button" class="btn btn-primary dropdown-toggle " data-toggle="dropdown">
         <svg width="16" height="16" fill="currentColor" class="bi bi-border-width" viewBox="0 0 16 16">
           <path d="M0 3.5A.5.5 0 0 1 .5 3h15a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-2zm0 5A.5.5 0 0 1 .5 8h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1zm0 4a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z" />
-        </svg> Chapter </button>
+        </svg> Chương <%= @chapter.order %> </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="Chapter_1.html">Chapter 1</a>
-        <a class="dropdown-item" href="Chapter_2.html">Chapter 2</a>
-        <a class="dropdown-item" href="Chapter_2.html">Chapter 3</a>
-        <a class="dropdown-item" href="Chapter_2.html">Chapter 4</a>
-        <a class="dropdown-item" href="Chapter_2.html">Chapter 5</a>
-        <a class="dropdown-item" href="Chapter_2.html">Chapter 6</a>
-        <a class="dropdown-item" href="Chapter_2.html">Chapter 7</a>
-        <a class="dropdown-item" href="Chapter_2.html">Chapter 8</a>
-        <a class="dropdown-item" href="Chapter_2.html">Chapter 9</a>
-        <a class="dropdown-item" href="Chapter_2.html">Chapter 10</a>
+        <%= render partial: "client/common/item_chapter", collection: @chapters, as: :chapter  %>
       </div>
     </div>
     <div class="btn-group">
@@ -61,17 +52,7 @@
   <div class="container">
     <br>
     <div class="chapter-text">
-      <p>Nửa đêm, Lương Hạnh dường như đã chìm vào trong giấc mơ, nhưng sau đó...</p>
-      <p>Cô mở đôi mắt nặng trĩu, nhất thời sững lại.</p>
-      <p>Thì ra ngay lúc này, người đàn ông cả tuần mới về một lần kia đang đứng bên cạnh cô, ánh đèn vàng ấm áp nơi đầu giường rọi lên người anh, soi tỏ làn da nửa thân trên cùng cánh tay thon dài, nhìn qua thật là đẹp.</p>
-      <p>Lương Hạnh sững sờ.</p>
-      <p>Hôm nay mới là thứ bảy mà nhỉ, sao anh ta đã về rồi?</p>
-      <p>Sáng hôm sau, Lương Hạnh bị tiếng còi xe dưới nhà làm cho tỉnh giấc.</p>
-      <p>Cô ôm chăn ngồi dậy, ngây người mất hồi lâu, đến khi nghe thấy tiếng động từ dưới bếp, cô mới vội vội vàng vàng lao ra khỏi phòng, rồi nhìn thấy một bóng lưng cao gầy đang lúi húi trong bếp.</p>
-      <p>Người đàn ông ấy mặc bộ đồ ở nhà, eo săn chắc, cặp chân dài, nhìn tổng thể dáng người hơi gầy.</p>
-      <p>Triệu Mịch Thanh làm xong bữa sáng, vừa bước ra khỏi nhà bếp thì thấy Lương Hạnh mặc đồ ngủ đứng đó từ bao giờ, anh khẽ cau mày: “Đi thay đồ đi.”</p>
-      <p>“À, ừm.” Lương Hạnh cúi đầu nhìn bộ váy ngủ lụa tơ tằm trên người, lập tức xấu hổ đỏ mặt, vội vã chạy về phòng.</p>
-      <p>Cô đánh răng rửa mặt xong xuôi thì Triệu Mịch Thanh đã đang ngồi bàn ăn sáng trước rồi. Lương Hạnh bèn ngồi xuống đối diện anh.</p>
+      <%= @chapter.content %>
     </div>
   </div>
 </div>
@@ -92,18 +73,9 @@
       <button type="button" class="btn btn-primary dropdown-toggle " data-toggle="dropdown">
         <svg width="16" height="16" fill="currentColor" class="bi bi-border-width" viewBox="0 0 16 16">
           <path d="M0 3.5A.5.5 0 0 1 .5 3h15a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-2zm0 5A.5.5 0 0 1 .5 8h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1zm0 4a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z" />
-        </svg> Chapter </button>
+        </svg> Chương <%= @chapter.order %> </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="Chapter_1.html">Chapter 1</a>
-        <a class="dropdown-item" href="Chapter_2.html">Chapter 2</a>
-        <a class="dropdown-item" href="Chapter_2.html">Chapter 3</a>
-        <a class="dropdown-item" href="Chapter_2.html">Chapter 4</a>
-        <a class="dropdown-item" href="Chapter_2.html">Chapter 5</a>
-        <a class="dropdown-item" href="Chapter_2.html">Chapter 6</a>
-        <a class="dropdown-item" href="Chapter_2.html">Chapter 7</a>
-        <a class="dropdown-item" href="Chapter_2.html">Chapter 8</a>
-        <a class="dropdown-item" href="Chapter_2.html">Chapter 9</a>
-        <a class="dropdown-item" href="Chapter_2.html">Chapter 10</a>
+        <%= render partial: "client/common/item_chapter", collection: @chapters, as: :chapter  %>
       </div>
     </div>
     <div class="btn-group">

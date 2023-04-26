@@ -6,7 +6,6 @@ class CreateStories < ActiveRecord::Migration[7.0]
       t.text :description
       t.string :source
       t.string :status
-      t.string :posting_date
       t.string :visibility
       t.references :author
       t.references :category
