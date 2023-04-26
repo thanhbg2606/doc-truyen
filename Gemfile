@@ -3,7 +3,9 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "3.0.4"
 
+gem "activerecord-import"
 gem "bootsnap", require: false
+gem "config"
 gem "figaro"
 gem "importmap-rails"
 gem "jbuilder"
@@ -22,6 +24,7 @@ group :development, :test do
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.14.0", require: false
+  gem "faker"
 end
 
 group :development do

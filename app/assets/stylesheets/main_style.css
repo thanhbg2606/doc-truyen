@@ -627,3 +627,10 @@ h1.boder3 {
   margin: 0;
   background-color: rgb(66, 63, 61);
 }
+
+/* custom dropdown */
+
+.justify-content-center .dropdown-menu {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}

@@ -5,6 +5,7 @@ class CreateChapters < ActiveRecord::Migration[7.0]
       t.string :slug, index: { unique: true }
       t.text :content
       t.integer :order
+      t.string :posting_date
       t.references :story
       t.timestamps
     end
