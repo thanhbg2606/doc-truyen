@@ -90,6 +90,7 @@ GEM
       deep_merge (~> 1.2, >= 1.2.1)
       dry-validation (~> 1.0, >= 1.0.0)
     crass (1.0.6)
+    csv (3.1.9)
     date (3.3.3)
     debug (1.7.2)
       irb (>= 1.5.0)
@@ -288,6 +289,7 @@ DEPENDENCIES
   bootsnap
   capybara
   config
+  csv
   debug
   faker
   figaro

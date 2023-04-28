@@ -25,7 +25,7 @@
             </svg> Lượt xem : <%= rand(1000..100000) %>
           </p>
           <div>Bạn đang đọc truyện <%= @story.name %> của tác giả <%= @story.author.name %> trên trang đọc truyện online. </div>
-          <div id="demo" class="collapse"><%= @story.description %></div>
+          <div id="demo" class="collapse"><%= sanitize @story.description %></div>
           <a href="#demo" data-toggle="collapse">Xem thêm</a>
         </div>
         <br>
